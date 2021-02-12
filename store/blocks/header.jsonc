@@ -1,13 +1,20 @@
 {
   "header": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop", 
+      "header-layout.mobile"
+    ]
   },
   "header.full": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop", 
+      "header-layout.mobile"
+    ]
   },
   "header-layout.desktop": {
     "children": [
-      "sticky-layout#desktop"
+      "sticky-layout#desktop",
+      "header-row#menu"
     ]
   },
   "sticky-layout#desktop": {
@@ -72,6 +79,29 @@
       "preserveLayoutOnMobile": true,
       "fullWidth": true
     }
+  },
+  "header-row#menu": {
+    "children": [
+      "header-spacer",
+      "vtex.menu@2.x:menu#categories",
+      "header-spacer"
+    ]
+  },
+  "vtex.menu@2.x:menu#categories": {
+    "children": [
+      "menu-item#major-appliances",
+      "menu-item#small-appliances",
+      "menu-item#electronics"
+    ],
+
+    "props":{
+      "orientation": "horizontal"
+    }
+  },
+  "vtex.menu@2.x:submenu#major":{
+    "children":[
+      "vtex.menu@2.x:menu#major"
+    ]
   },
   "drawer": {
     "children": []
